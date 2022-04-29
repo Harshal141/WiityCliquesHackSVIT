@@ -1,3 +1,13 @@
 :root{
     --themePrimary: #7843E6;
 }
+
+.btn-outline-themePrimary{
+    border: 2px solid var(--themePrimary);
+    color: var(--themePrimary);
+}
+
+.btn-outline-themePrimary:hover{
+    background-color: var(--themePrimary);
+    color: white;
+}
