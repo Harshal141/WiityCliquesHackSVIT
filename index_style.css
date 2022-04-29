@@ -5,6 +5,7 @@
   /* Style the search field */
   form.example input[type=text] {
     padding: 10px;
+    padding-left: 20px;
     font-size: 17px;
     border: 1px solid grey;
     float: left;
@@ -23,7 +24,10 @@
     border: 1px solid grey;
     border-left: none; /* Prevent double borders */
     cursor: pointer;
-  }
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+}
   
   form.example button:hover {
     background: #0b7dda;
