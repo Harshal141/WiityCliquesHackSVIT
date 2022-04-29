@@ -9,14 +9,17 @@
     <title>Album example · Bootstrap v5.0</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+    <script src="https://kit.fontawesome.com/2727ad4eb7.js" crossorigin="anonymous"></script>
 
     
 
     <!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-<link herf="style.css" rel="stylesheet">
-<link herf="index_style.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<link href="index_style.css" rel="stylesheet">
 
+<!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
       .bd-placeholder-img {
@@ -73,17 +76,19 @@
 
 <!-- end header -->
 
-    
+<br><br><br>  
 <main>
 
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-bold" >Co<span></span>Labs</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+        <h1 class="h1 fw-bold">Co<span style=" color: var(--themePrimary)">Labs</span></h1>
+        <p class="lead text-muted">CoLabs - Quality Workshops for All<p>
+       <!-- The form --><br>
+<form class="example">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit" style=" background-color: var(--themePrimary)"><i class="fa fa-search"></i></button>
+</form>
         </p>
       </div>
     </div>
@@ -150,7 +155,7 @@
 <!-- start features -->
 
 <div class="container px-4 py-5" id="hanging-icons">
-    <h2 class="pb-2 border-bottom">Hanging icons</h2>
+    <h2 class="pb-2 border-bottom">CoLabs Features :</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
       <div class="col d-flex align-items-start">
         <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
@@ -159,7 +164,7 @@
         <div>
           <h2>Featured title</h2>
           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-          <a href="#" class="btn btn-primary">
+          <a href="#" class="btn btn-primary" style=" background-color: var(--themePrimary)">
             Primary button
           </a>
         </div>
@@ -171,7 +176,7 @@
         <div>
           <h2>Featured title</h2>
           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-          <a href="#" class="btn btn-primary">
+          <a href="#" class="btn btn-primary" style=" background-color: var(--themePrimary)">
             Primary button
           </a>
         </div>
@@ -183,7 +188,7 @@
         <div>
           <h2>Featured title</h2>
           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-          <a href="#" class="btn btn-primary">
+          <a href="#" class="btn btn-primary" style=" background-color: var(--themePrimary)">
             Primary button
           </a>
         </div>
