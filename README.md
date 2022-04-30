@@ -1,11 +1,12 @@
 # WiityCliquesHackSVIT
 
-# CoLabs
+![CoLabs](images/logo.png)
 
 ### Problem:
 Providing students and researchers with best possible laboratories, workshops and other facilities without the hindrance of distance by shared usage of workshops and labs of other Institutions.
 
-### Students can book slots for listed workshops  and laboratories, from the platform and access the physical workshops/labs.
+### Solution:
+Students can book slots for listed workshops  and laboratories, from the platform and access the physical workshops/labs.
 
 Students will get certificates, mentioning the number of hours spent at the facility.  
 
