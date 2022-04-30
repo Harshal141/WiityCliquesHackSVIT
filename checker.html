@@ -41,10 +41,10 @@
     const db = getDatabase(app)
     const dbRef = ref(db)
 
-    get(child(dbRef, `users`)).then((snapshot) => {
+    get(child(dbRef, `users/`)).then((snapshot) => {
         if (snapshot.exists()) {
-            for (let i = 0; i < snapshot.val().length; i++) {
-                console.log(snapshot.val())
+            for (let i = 0; i < Object.keys(snapshot.val()).length; i++) {
+                console.log(snapshot.val()[1])
             }
             // console.log(snapshot.val());
         } else {
