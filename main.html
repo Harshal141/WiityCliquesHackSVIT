@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoLabs - Quality Workshops for All</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="main_style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/2727ad4eb7.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light shadow-sm">
@@ -19,25 +26,22 @@
             <a class="navbar-brand" href="#">
                 <h1 class="h1 fw-bold">Co<span style=" color: var(--themePrimary)">Labs</span></h1>
             </a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-            >
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item">
-                    <a class="nav-link mx-2" href="#!"><i class="fas fa-info pe-2"></i>About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-2" href="#!"><i class="fas fa-address-card pe-2"></i>Contact Us</a>
-                </li>
-                <li class="nav-item ms-3 rounded-pill">
-                    <a class="btn btn-black btn-rounded rounded-pill text-light" href="#!" style="background-color: var(--themePrimary);">Log Out</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#!"><i class="fas fa-info pe-2"></i>About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="#!"><i class="fas fa-address-card pe-2"></i>Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-3 rounded-pill">
+                        <a class="btn btn-black btn-rounded rounded-pill text-light" href="#!"
+                            style="background-color: var(--themePrimary);">Log Out</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -50,11 +54,11 @@
             <div class="col-lg-4">
                 <div class="card mb-4 border-light rounded-lg shadow-sm bg-light">
                     <div class="card-body text-center">
-                    <img src="images/avatar.webp" alt="avatar"
-                        class="rounded-circle img-fluid shadow-sm" style="width: 150px;">
-                    <h5 class="my-3">Aakash Sharma </h5>
-                    <p class="text-muted mb-1">First Year</p>
-                    <p class="text-muted mb-4">Computer Engineering</p>
+                        <img src="images/avatar.webp" alt="avatar" class="rounded-circle img-fluid shadow-sm"
+                            style="width: 150px;">
+                        <h5 class="my-3">Aakash Sharma </h5>
+                        <p class="text-muted mb-1">First Year</p>
+                        <p class="text-muted mb-4">Computer Engineering</p>
                     </div>
                 </div>
             </div>
@@ -116,41 +120,143 @@
         <form class="locationSearch justify-content-around mt-4 row">
             <!-- Collapsible filters menu -->
             <div class="dropdown col-1">
-                <button 
-                    type="submit" 
+                <button type="submit"
                     class="btn-outline-themePrimary p-3 rounded-pill bg-light shadow-sm dropdown-toggle"
-                    data-bs-toggle="dropdown"
-                    style= "width: 100%;"
-                >
+                    data-bs-toggle="dropdown" style="width: 100%;">
                 </button>
-                    
-                    <ul class="bg-themePrimary rounded-xl dropdown-menu">                        
-                        <li><a class="dropdown-item text-light fw-bold" href="#">Filters</a></li>
-                        <li><a class="dropdown-item text-light" href="#">Chemistry</a></li>
-                        <li><a class="dropdown-item text-light" href="#">Physics</a></li>
-                        <li><a class="dropdown-item text-light" href="#">Electronics</a></li>
-                    </ul>
+
+                <ul class="bg-themePrimary rounded-xl dropdown-menu">
+                    <li><a class="dropdown-item text-light fw-bold" href="#">Filters</a></li>
+                    <li><a class="dropdown-item text-light" href="#">Chemistry</a></li>
+                    <li><a class="dropdown-item text-light" href="#">Physics</a></li>
+                    <li><a class="dropdown-item text-light" href="#">Electronics</a></li>
+                </ul>
             </div>
-            <input 
-                type="text" 
-                placeholder="Search..." 
-                name="search" 
-                class="bg-light col-8 p-3 rounded-pill border border-light shadow-sm "
-            >
-            <button 
-                type="submit" 
-                class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm "
-            >
+            <input type="text" placeholder="Search..." name="search"
+                class="bg-light col-8 p-3 rounded-pill border border-light shadow-sm ">
+            <button type="submit" class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm ">
                 <i class="fas fa-search"></i>
             </button>
-            <button 
-                type="submit" 
-                class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm "
-            >
+            <button type="submit" class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm ">
                 <i class="fas fa-map-pin"></i>
             </button>
         </form>
     </div>
     <!-- Search Section -->
-    </body>
+
+
+    <br><br><br>
+
+
+    <!-- Lab Recommendation -->
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mainBox">
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Lab Recommendation -->
+
+
+
+
+
+
+
+
+
+</body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
+    import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyAYfJLPdsZEJZBG4fe_iiC0zUt1rVmq3VU",
+        authDomain: "wiitycliques.firebaseapp.com",
+        databaseURL: "https://wiitycliques-default-rtdb.asia-southeast1.firebasedatabase.app/",
+        projectId: "wiitycliques",
+        storageBucket: "wiitycliques.appspot.com",
+        messagingSenderId: "728732831863",
+        appId: "1:728732831863:web:dc65be187ff45aaf683672",
+        measurementId: "G-2ZCS2MP69G"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getDatabase(app)
+    const dbRef = ref(db)
+    let data;
+    get(child(dbRef, `users/`)).then((snapshot) => {
+        if (snapshot.exists()) {
+            for (let i = 0; i < Object.keys(snapshot.val()).length; i++) {
+                printLab()
+            }
+
+        } else {
+            console.log("No data available");
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
+
+    // get(child(dbRef, `users/`)).then((snapshot) => {
+    //     if (snapshot.exists()) {
+    //         data=snapshot.val();
+    //     } else {
+    //         console.log("No data available");
+    //     }
+    // }).catch((error) => {
+    //     console.error(error);
+    // });
+
+    console.log(data)
+
+    function printLab() {
+        let box = document.querySelector(".mainBox")
+        box.innerHTML += `   <div class="col">
+                    <div class="card shadow-sm rounded-lg">
+                        <img src="images/2.jpg" class="bd-placeholder-img card-img-top rounded-lg" width="100%"
+                            height="225" focusable="false">
+                        <title>Placeholder</title></img>
+
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h3 class="h4">Mechanical Workshop</h3>
+                                    <h4 class="h5">Army Institute of Technology</h4>
+                                </div>
+                                <div class="btn btn-themePrimary rounded-circle shadow-sm"
+                                    style="height: 50px; width: 50px;">
+                                    <i class="fas fa-map-pin mt-2"></i>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">9 mins</small>
+                                <small class="text-muted">$50</small>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Book Slot</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              `;
+    }
+
+
+
+</script>
+
 </html>
