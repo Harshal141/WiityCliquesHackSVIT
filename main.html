@@ -134,22 +134,22 @@
             </div>
             <input type="text" placeholder="Search..." name="search" list="liss"
                 class="bg-light col-8 p-3 rounded-pill border border-light shadow-sm search">
-                 <!-- suggestion -->
-                <datalist id="liss">
-                    <option >Objective C</option>
-                    <option >C++</option>
-                    <option >C#</option>
-                    <option >Cobol</option>
-                    <option >Go</option>
-                    <option >Java</option>
-                    <option >JavaScript</option>
-                    <option >Python</option>
-                    <option >PHP</option>
-                    <option >Pascal</option>
-                    <option >Perl</option>
-                    <option >some</option>
-                    <option >Swift</option>
-                </datalist>
+            <!-- suggestion -->
+            <datalist id="liss">
+                <option>Objective C</option>
+                <option>C++</option>
+                <option>C#</option>
+                <option>Cobol</option>
+                <option>Go</option>
+                <option>Java</option>
+                <option>JavaScript</option>
+                <option>Python</option>
+                <option>PHP</option>
+                <option>Pascal</option>
+                <option>Perl</option>
+                <option>some</option>
+                <option>Swift</option>
+            </datalist>
             <button type="submit" class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm sort">
                 <i class="fas fa-search"></i>
             </button>
@@ -176,14 +176,6 @@
     </div>
     <!-- Lab Recommendation -->
 
-
-
-
-
-
-
-
-
 </body>
 
 <script type="module">
@@ -206,40 +198,40 @@
         measurementId: "G-2ZCS2MP69G"
     };
 
-// sort after clicking function
-    document.querySelector('.sort').addEventListener("click",function(e){
+    // sort after clicking function
+    document.querySelector('.sort').addEventListener("click", function (e) {
         console.log("run")
         e.preventDefault()
-    
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const db = getDatabase(app)
-    const dbRef = ref(db)
-    let data;
-    get(child(dbRef, `college/`)).then((snapshot) => {
-        if (snapshot.exists()) {
-            // retrieve data from search bar
-            let search = document.querySelector(".search").value
-            console.log(search)
-            for (let i = 0; i < Object.keys(snapshot.val()).length; i++) {
-                // data print
-                let name = snapshot.val()[i+1]
-                let x = name.location.split(",")[0], y = name.location.split(",")[1]
-                let dist;
-                if(name.category.includes(search, )){
-                    printLab(i+1,name,dist)
-                }
-            }
-        } else {
-            console.log("No data available");
-        }
-    }).catch((error) => {
-        console.error(error);
-    });
-})
 
-// event to open comp
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getDatabase(app)
+        const dbRef = ref(db)
+        let data;
+        get(child(dbRef, `college/`)).then((snapshot) => {
+            if (snapshot.exists()) {
+                // retrieve data from search bar
+                let search = document.querySelector(".search").value
+                console.log(search)
+                for (let i = 0; i < Object.keys(snapshot.val()).length; i++) {
+                    // data print
+                    let name = snapshot.val()[i + 1]
+                    let x = name.location.split(",")[0], y = name.location.split(",")[1]
+                    let dist;
+                    if (name.category.includes(search,)) {
+                        printLab(i + 1, name, dist)
+                    }
+                }
+            } else {
+                console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+    })
+
+    // event to open comp
     let box = document.querySelector(".mainBox")
     box.addEventListener("click",function real(e){
             if(e.target.className == "btn btn-sm btn-outline-secondary view"){
@@ -249,8 +241,8 @@
             }
         })
 
-// print function
-    function printLab(sr_no,name,dist) {
+    // print function
+    function printLab(sr_no, name, dist) {
         let box = document.querySelector(".mainBox")
         box.innerHTML += `   <div class="col">
                     <div class="card shadow-sm rounded-lg">
@@ -283,7 +275,7 @@
                     </div>
                 </div>
 
-              `;
+            `;
     }
 
 </script>
