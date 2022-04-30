@@ -136,7 +136,7 @@
                 class="bg-light col-8 p-3 rounded-pill border border-light shadow-sm search">
             <!-- suggestion -->
             <datalist id="liss">
-                <option>3D Printer</option>
+                <option>3-D Printer</option>
                 <option>CNC Machine</option>
                 <option>Nuclear Reactor</option>
                 <option>Telescope</option>
@@ -207,6 +207,7 @@
             if (snapshot.exists()) {
                 // retrieve data from search bar
                 let search = document.querySelector(".search").value
+                document.querySelector('.search').value = "";
                 console.log(search)
                 for (let i = 0; i < Object.keys(snapshot.val()).length; i++) {
                     // data print
