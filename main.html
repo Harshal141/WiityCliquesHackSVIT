@@ -136,19 +136,13 @@
                 class="bg-light col-8 p-3 rounded-pill border border-light shadow-sm search">
             <!-- suggestion -->
             <datalist id="liss">
-                <option>Objective C</option>
-                <option>C++</option>
-                <option>C#</option>
-                <option>Cobol</option>
-                <option>Go</option>
-                <option>Java</option>
-                <option>JavaScript</option>
-                <option>Python</option>
-                <option>PHP</option>
-                <option>Pascal</option>
-                <option>Perl</option>
-                <option>some</option>
-                <option>Swift</option>
+                <option>3D Printer</option>
+                <option>CNC Machine</option>
+                <option>Nuclear Reactor</option>
+                <option>Telescope</option>
+                <option>Laser</option>
+                <option>Optics</option>
+                <option>Mechanics</option>
             </datalist>
             <button type="submit" class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm sort">
                 <i class="fas fa-search"></i>
@@ -233,12 +227,13 @@
 
     // event to open comp
     let box = document.querySelector(".mainBox")
-    box.addEventListener("click", function real(e) {
-        if (e.target.className == "btn btn-sm btn-outline-secondary view") {
-            let id = e.target.nextElementSibling.innerHTML
-            window.localStorage.setItem('id', id);
-        }
-    })
+    box.addEventListener("click",function real(e){
+            if(e.target.className == "btn btn-sm btn-outline-secondary view"){
+                let id = e.target.nextElementSibling.innerHTML
+                window.localStorage.setItem('id',id );
+                window.open("comp.html", '_blank');
+            }
+        })
 
     // print function
     function printLab(sr_no, name, dist) {
@@ -267,7 +262,7 @@
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary view">View</button>
                                     <p style="display:none;">${sr_no}</p>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Book Slot</button>
+                                    <button onclick="document.location='${name.gateway}'" type="button" class="btn btn-sm btn-outline-secondary book">Book Slot</button>
                                 </div>
                             </div>
                         </div>
