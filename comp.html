@@ -70,11 +70,11 @@
         <div class="row">
           <div class="col">
             <label for="exampleInputPassword1">Distance</label>
-            <input type="text" class="form-control" placeholder="Dist" disabled>
+            <input type="text" class="form-control distance" placeholder="Dist" disabled>
           </div>
           <div class="col">
             <label for="exampleInputPassword1">Price</label>
-            <input type="text" class="form-control" placeholder="Cost" disabled>
+            <input type="text" class="form-control price" placeholder="Cost" disabled>
           </div>
         </div>
       </form>
@@ -179,6 +179,7 @@
     if (snapshot.exists()) {
       // let neww=snapshot.val()[1].time
       document.querySelector(".time").value =snapshot.val()[1].time
+      document.querySelector(".price").value =snapshot.val()[1].price
       // console.log(neww)
 
     } else {
