@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login form design</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/f59bcd8580.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <style type="text/css">
+    /* sign in FORM */
+    #logreg-forms{
+        width:432px;
+        margin:10vh auto;
+        background-color:#fff;
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.15);
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+    #logreg-forms form {
+        width: 100%;
+        max-width: 430px;
+        padding: 25px;
+        margin: auto;
+    }
+    #logreg-forms .form-control {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom:15px;
+    }
+    #logreg-forms .form-control:focus { z-index: 2; }
+    #logreg-forms .form-signin input[type="email"] {
+     
+    }
+    #logreg-forms .form-signin input[type="password"] {
+    
+    }
+    
+    #logreg-forms .social-login{
+        width:390px;
+        margin:0 auto;
+        margin-bottom: 14px;
+    }
+    #logreg-forms .social-btn{
+        font-weight: 100;
+        color:white;
+        width:190px;
+        font-size: 0.9rem;
+    }
+    
+    #logreg-forms a{
+        display: block;
+        padding-top:10px;
+        color:lightseagreen;
+    }
+    
+    #logreg-form .lines{
+        width:200px;
+        border:1px solid red;
+    }
+    
+    
+    #logreg-forms button[type="submit"]{ margin-top:10px; }
+    
+    #logreg-forms .facebook-btn{  background-color:#3C589C; }
+    
+    #logreg-forms .google-btn{ background-color: #DF4B3B; }
+    
+    #logreg-forms .form-reset, #logreg-forms .form-signup{ display: none; }
+    
+    #logreg-forms .form-signup .social-btn{ width:210px; }
+    
+    #logreg-forms .form-signup input { margin-bottom: 2px;}
+    
+    .form-signup .social-login{
+        width:210px !important;
+        margin: 0 auto;
+    }
+    
+    </style>
+
+</head>
+
+<body>
+   
+
+    <div class="container">
+        <div class="row mx-auto">
+        <div style="margin:0 auto;">
+        <div class="mt-3">
+         <div id="logreg-forms">
+                    <form class="form-signin">
+                        <h1 class="h4 mb-4 font-weight-normal jj" style="text-align: center">Log In to your account</h1>
+                        <div class="social-login">
+                            <button class="btn facebook-btn social-btn" type="button"><span><i class="fa fa-facebook"></i>&nbsp; Log In with Facebook</span> </button>
+                            <button class="btn google-btn social-btn" type="button"><span><i class="fa fa-google-plus"></i>&nbsp; Log In with Google+</span> </button>
+                        </div>
+                        <p style="text-align:center"> OR  </p>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        
+                        <button class="btn btn-success btn-block font-weight-bold" type="submit"> Log In</button>
+                        <div class="overflow-hidden">
+                        <a href="#" id="forgot_pswd" class="font-weight-bold float-left text-black-50">Forgot password?</a>
+                        <a href="#" class="font-weight-bold float-right">Sign up New Account</a>
+                    </div>
+                        <!-- <p>Don't have an account!</p>  -->
+                       
+                        </form>
+            
+                    
+        </div>        
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
+    import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyAYfJLPdsZEJZBG4fe_iiC0zUt1rVmq3VU",
+        authDomain: "wiitycliques.firebaseapp.com",
+        databaseURL: "https://wiitycliques-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "wiitycliques",
+        storageBucket: "wiitycliques.appspot.com",
+        messagingSenderId: "728732831863",
+        appId: "1:728732831863:web:dc65be187ff45aaf683672",
+        measurementId: "G-2ZCS2MP69G"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider(app);
+    const db = getDatabase(app)
+    const dbRef = ref(db)
+
+    // data adding
+    document.getElementById("sub").addEventListener('click', function writeUserData(name, age, roll) {
+        // const db = getDatabase();
+        name = document.getElementById('name').value
+        age = document.getElementById("age").value
+        roll = document.getElementById("roll").value
+        set(ref(db, 'users/' + roll), {
+            username: name,
+            age: age
+            // profile_picture: imageUrl
+        });
+    })
+
+    //  data fetching
+    get(child(dbRef, `users`)).then((snapshot) => {
+        if (snapshot.exists()) {
+            console.log(snapshot.val());
+        } else {
+            console.log("No data available");
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
+
+    login.addEventListener('click', (e) => {
+        // signInWithRedirect(auth, provider);
+        // getRedirectResult(auth)
+        //     .then((result) => {
+        //         // This gives you a Google Access Token. You can use it to access Google APIs.
+        //         const credential = GoogleAuthProvider.credentialFromResult(result);
+        //         const token = credential.accessToken;
+
+        //         // The signed-in user info.
+        //         const user = result.user;
+        //         location.replace("https://www.w3schools.com")
+        //     }).catch((error) => {
+        //         // Handle Errors here.
+        //         const errorCode = error.code;
+        //         const errorMessage = error.message;
+        //         // The email of the user's account used.
+        //         const email = error.email;
+        //         // The AuthCredential type that was used.
+        //         const credential = GoogleAuthProvider.credentialFromError(error);
+        //         // ...
+        //     });
+
+        const auth = getAuth();
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                location.replace("https://www.w3schools.com")
+
+                // ...
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            });
+    });
+</script>
+
+</html>
