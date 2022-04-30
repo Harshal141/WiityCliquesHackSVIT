@@ -132,12 +132,28 @@
                     <li><a class="dropdown-item text-light" href="#">Electronics</a></li>
                 </ul>
             </div>
-            <input type="text" placeholder="Search..." name="search"
-                class="bg-light col-8 p-3 rounded-pill border border-light shadow-sm ">
-            <button type="submit" class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm ">
+            <input type="text" placeholder="Search..." name="search" list="liss"
+                class="bg-light col-8 p-3 rounded-pill border border-light shadow-sm search">
+                 <!-- suggestion -->
+                <datalist id="liss">
+                    <option >Objective C</option>
+                    <option >C++</option>
+                    <option >C#</option>
+                    <option >Cobol</option>
+                    <option >Go</option>
+                    <option >Java</option>
+                    <option >JavaScript</option>
+                    <option >Python</option>
+                    <option >PHP</option>
+                    <option >Pascal</option>
+                    <option >Perl</option>
+                    <option >some</option>
+                    <option >Swift</option>
+                </datalist>
+            <button type="submit" class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm sort">
                 <i class="fas fa-search"></i>
             </button>
-            <button type="submit" class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm ">
+            <button type="submit" class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm">
                 <i class="fas fa-map-pin"></i>
             </button>
         </form>
@@ -169,6 +185,7 @@
 
 
 </body>
+
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
@@ -189,6 +206,11 @@
         measurementId: "G-2ZCS2MP69G"
     };
 
+// sort after clicking function
+    document.querySelector('.sort').addEventListener("click",function(e){
+        console.log("run")
+        e.preventDefault()
+    
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
@@ -197,9 +219,17 @@
     let data;
     get(child(dbRef, `college/`)).then((snapshot) => {
         if (snapshot.exists()) {
+            // retrieve data from search bar
+            let search = document.querySelector(".search").value
+            console.log(search)
             for (let i = 0; i < Object.keys(snapshot.val()).length; i++) {
                 // data print
-                printLab(i+1,'name','college','price')
+                let name = snapshot.val()[i+1]
+                let x = name.location.split(",")[0], y = name.location.split(",")[1]
+                let dist;
+                if(name.category.includes(search, )){
+                    printLab(i+1,name,dist)
+                }
             }
         } else {
             console.log("No data available");
@@ -207,9 +237,9 @@
     }).catch((error) => {
         console.error(error);
     });
+})
 
-    console.log(data)
-
+// event to open comp
     let box = document.querySelector(".mainBox")
     box.addEventListener("click",function real(e){
             if(e.target.className == "btn btn-sm btn-outline-secondary view"){
@@ -217,7 +247,9 @@
                 window.localStorage.setItem('id',id );
             }
         })
-    function printLab(sr_no,name,college,price,distance="12") {
+
+// print function
+    function printLab(sr_no,name,dist) {
         let box = document.querySelector(".mainBox")
         box.innerHTML += `   <div class="col">
                     <div class="card shadow-sm rounded-lg">
@@ -228,8 +260,8 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h3 class="h4">Mechanical Workshop</h3>
-                                    <h4 class="h5">Army Institute of Technology</h4>
+                                    <h3 class="h4">${name.labName}</h3>
+                                    <h4 class="h5">${name.college}</h4>
                                 </div>
                                 <div class="btn btn-themePrimary rounded-circle shadow-sm"
                                     style="height: 50px; width: 50px;">
@@ -238,8 +270,8 @@
                             </div>
                             <br>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">${distance} Km</small>
-                                <small class="text-muted">$50</small>
+                                <small class="text-muted">${dist} Km</small>
+                                <small class="text-muted">$ ${name.price}</small>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary view">View</button>
                                     <p style="display:none;">${sr_no}</p>
