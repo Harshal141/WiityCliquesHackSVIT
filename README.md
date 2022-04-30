@@ -2,13 +2,10 @@
 
 # CoLabs
 
-###Problem:
+### Problem:
 Providing students and researchers with best possible laboratories, workshops and other facilities without the hindrance of distance by shared usage of workshops and labs of other Institutions.
 
-###Solution:
-We propose a WebApp “CoLabs” which lets colleges and universities lend available workshops and laboratories to students of other colleges staying near that college.
-
-Students can book slots for listed workshops  and laboratories, from the platform and access the physical workshops/labs.
+### Students can book slots for listed workshops  and laboratories, from the platform and access the physical workshops/labs.
 
 Students will get certificates, mentioning the number of hours spent at the facility.  
 
