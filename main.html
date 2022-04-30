@@ -208,7 +208,7 @@
         console.error(error);
     });
 
-    get(child(dbRef, `users/`)).then((snapshot) => {
+    get(child(dbRef, `college/`)).then((snapshot) => {
         if (snapshot.exists()) {
             data=snapshot.val();
         } else {
