@@ -245,6 +245,7 @@
             if(e.target.className == "btn btn-sm btn-outline-secondary view"){
                 let id = e.target.nextElementSibling.innerHTML
                 window.localStorage.setItem('id',id );
+                window.open("comp.html", '_blank');
             }
         })
 
@@ -275,7 +276,7 @@
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary view">View</button>
                                     <p style="display:none;">${sr_no}</p>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Book Slot</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary book">Book Slot</button>
                                 </div>
                             </div>
                         </div>
