@@ -220,6 +220,13 @@
 
     console.log(data)
 
+    let box = document.querySelector(".mainBox")
+    box.addEventListener("click",function real(e){
+            if(e.target.className == "btn btn-sm btn-outline-secondary view"){
+                let id = e.target.nextElementSibling.innerHTML
+                window.localStorage.setItem('id',id );
+            }
+        })
     function printLab() {
         let box = document.querySelector(".mainBox")
         box.innerHTML += `   <div class="col">
@@ -244,7 +251,8 @@
                                 <small class="text-muted">9 mins</small>
                                 <small class="text-muted">$50</small>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary view">View</button>
+                                    <p style="display:none;">1</p>
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Book Slot</button>
                                 </div>
                             </div>
@@ -254,8 +262,6 @@
 
               `;
     }
-
-
 
 </script>
 
