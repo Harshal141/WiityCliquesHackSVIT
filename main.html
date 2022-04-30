@@ -195,22 +195,12 @@
     const db = getDatabase(app)
     const dbRef = ref(db)
     let data;
-    get(child(dbRef, `users/`)).then((snapshot) => {
-        if (snapshot.exists()) {
-            for (let i = 0; i < Object.keys(snapshot.val()).length; i++) {
-                printLab()
-            }
-
-        } else {
-            console.log("No data available");
-        }
-    }).catch((error) => {
-        console.error(error);
-    });
-
     get(child(dbRef, `college/`)).then((snapshot) => {
         if (snapshot.exists()) {
-            data=snapshot.val();
+            for (let i = 0; i < Object.keys(snapshot.val()).length; i++) {
+                // data print
+                printLab(i+1,'name','college','price')
+            }
         } else {
             console.log("No data available");
         }
@@ -227,7 +217,7 @@
                 window.localStorage.setItem('id',id );
             }
         })
-    function printLab() {
+    function printLab(sr_no,name,college,price,distance="12") {
         let box = document.querySelector(".mainBox")
         box.innerHTML += `   <div class="col">
                     <div class="card shadow-sm rounded-lg">
@@ -248,11 +238,11 @@
                             </div>
                             <br>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small class="text-muted">9 mins</small>
+                                <small class="text-muted">${distance} Km</small>
                                 <small class="text-muted">$50</small>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary view">View</button>
-                                    <p style="display:none;">1</p>
+                                    <p style="display:none;">${sr_no}</p>
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Book Slot</button>
                                 </div>
                             </div>
