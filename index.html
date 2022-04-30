@@ -3,10 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
-    <title>Album example · Bootstrap v5.0</title>
+    <title>CoLabs - Quality Workshops for All</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
     <script src="https://kit.fontawesome.com/2727ad4eb7.js" crossorigin="anonymous"></script>
@@ -17,9 +14,6 @@
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 <link href="index_style.css" rel="stylesheet">
-
-<!-- Load icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
       .bd-placeholder-img {
@@ -44,7 +38,7 @@
 <!-- start header -->
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
+    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <h1 class="h1 fw-bold">Co<span style=" color: var(--themePrimary)">Labs</span></h1>
@@ -82,13 +76,48 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="h1 fw-bold">Co<span style=" color: var(--themePrimary)">Labs</span></h1>
-        <p class="lead text-muted">CoLabs - Quality Workshops for All<p>
-       <!-- The form --><br>
-<form class="example">
-  <input type="text" placeholder="Search.." name="search" style="border-top-left-radius: 50px;border-bottom-left-radius: 50px;">
-  <button type="submit" style=" background-color: var(--themePrimary)"><i class="fa fa-search"></i></button>
-</form>
+        <h1 class="display-1 fw-bold">Co<span style=" color: var(--themePrimary)">Labs</span></h1>
+        <p class="lead text-muted">CoLabs - Quality Workshops for All</p>
+      </div>
+       <!-- Search Section -->
+       <div class="container-lg">
+        <form class="locationSearch justify-content-around mt-4 row">
+            <!-- Collapsible filters menu -->
+            <div class="dropdown col-1">
+                <button 
+                    type="submit" 
+                    class="btn-outline-themePrimary p-3 rounded-pill bg-light shadow-sm dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                >
+                    Filters
+                </button>
+                    
+                    <ul class="bg-themePrimary rounded-xl dropdown-menu">
+                        <li><a class="dropdown-item text-light" href="#">Chemistry</a></li>
+                        <li><a class="dropdown-item text-light" href="#">Physics</a></li>
+                        <li><a class="dropdown-item text-light" href="#">Electronics</a></li>
+                    </ul>
+            </div>
+            <input 
+                type="text" 
+                placeholder="Search..." 
+                name="search" 
+                class="bg-light col-8 p-3 rounded-pill border border-light shadow-sm "
+            >
+            <button 
+                type="submit" 
+                class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm "
+            >
+                <i class="fas fa-search"></i>
+            </button>
+            <button 
+                type="submit" 
+                class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm "
+            >
+                <i class="fas fa-map-pin"></i>
+            </button>
+        </form>
+    </div>
         </p>
       </div>
     </div>

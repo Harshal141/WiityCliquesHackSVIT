@@ -1,5 +1,21 @@
+*{
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
 :root{
     --themePrimary: #7843E6;
+}
+.bg-themePrimary{
+    background-color: var(--themePrimary) !important;
+    color: white;
+}
+.btn-themePrimary{
+    background-color: var(--themePrimary) !important;
+    color: white;
+}
+
+.btn-themePrimary:hover{
+    background-color: rgb(49, 49, 49) !important;
 }
 
 .btn-outline-themePrimary{
@@ -8,6 +24,17 @@
 }
 
 .btn-outline-themePrimary:hover{
-    background-color: var(--themePrimary);
+    background-color: var(--themePrimary)!important;
     color: white;
+}
+
+.rounded-lg{
+    border-radius: 15px;
+}
+.rounded-xl{
+    border-radius: 25px;
+}
+.dropdown-item:hover{    
+    background-color: inherit !important;
+    font-weight: bolder;
 }

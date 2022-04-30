@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light">
+    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <h1 class="h1 fw-bold">Co<span style=" color: var(--themePrimary)">Labs</span></h1>
@@ -48,10 +48,10 @@
     <div id="profile" style="margin-top: 100px;" class="container-lg">
         <div class="row align-items-center">
             <div class="col-lg-4">
-                <div class="card mb-4">
+                <div class="card mb-4 border-light rounded-lg shadow-sm bg-light">
                     <div class="card-body text-center">
                     <img src="images/avatar.webp" alt="avatar"
-                        class="rounded-circle img-fluid" style="width: 150px;">
+                        class="rounded-circle img-fluid shadow-sm" style="width: 150px;">
                     <h5 class="my-3">Aakash Sharma </h5>
                     <p class="text-muted mb-1">First Year</p>
                     <p class="text-muted mb-4">Computer Engineering</p>
@@ -60,7 +60,7 @@
             </div>
 
             <div class="col-lg-8">
-                <div class="card mb-4">
+                <div class="card mb-4 border rounded-lg border-light shadow-sm bg-light">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-3">
@@ -100,15 +100,56 @@
                     </div>
                 </div>
 
-                <div class="row flex-wrap">
+                <!-- <div class="row flex-wrap">
                     <div class="col-3 d-flex justify-content-center"> <button class="btn btn-rounded rounded-pill center px-4 btn-outline-themePrimary"> Physics </button></div>
                     <div class="col-3 d-flex justify-content-center"> <button class="btn btn-rounded rounded-pill center px-4 btn-outline-themePrimary"> Electronics </button></div>
                     <div class="col-3 d-flex justify-content-center"> <button class="btn btn-rounded rounded-pill center px-4 btn-outline-themePrimary"> Mechanical </button></div>
                     <div class="col-3 d-flex justify-content-center"> <button class="btn btn-rounded rounded-pill center px-4 btn-outline-themePrimary"> Metallurgy </button></div>                    
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
     <!-- Profile -->
+
+    <!-- Seach Section -->
+    <div class="container-lg">
+        <form class="locationSearch justify-content-around mt-4 row">
+            <!-- Collapsible filters menu -->
+            <div class="dropdown col-1">
+                <button 
+                    type="submit" 
+                    class="btn-outline-themePrimary p-3 rounded-pill bg-light shadow-sm dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                >
+                    Filters
+                </button>
+                    
+                    <ul class="bg-themePrimary rounded-xl dropdown-menu">
+                        <li><a class="dropdown-item text-light" href="#">Chemistry</a></li>
+                        <li><a class="dropdown-item text-light" href="#">Physics</a></li>
+                        <li><a class="dropdown-item text-light" href="#">Electronics</a></li>
+                    </ul>
+            </div>
+            <input 
+                type="text" 
+                placeholder="Search..." 
+                name="search" 
+                class="bg-light col-8 p-3 rounded-pill border border-light shadow-sm "
+            >
+            <button 
+                type="submit" 
+                class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm "
+            >
+                <i class="fas fa-search"></i>
+            </button>
+            <button 
+                type="submit" 
+                class="btn-themePrimary col-1 p-3 rounded-pill border border-0 shadow-sm "
+            >
+                <i class="fas fa-map-pin"></i>
+            </button>
+        </form>
+    </div>
+    <!-- Search Section -->
     </body>
 </html>
