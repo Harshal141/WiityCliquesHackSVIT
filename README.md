@@ -20,7 +20,7 @@
 > Cloud **Firestore** will be used as the database.
 
 
-Dependencies:
+### Dependencies:
 > Firebase:
     Firebase will provide us the necessary Authentication and its cloud based Firestore will be used as the database for the project
 
