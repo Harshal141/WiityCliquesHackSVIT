@@ -59,8 +59,8 @@
   <br><br><br><br>
   <div class="d-flex flex-row bd-highlight mb-3">
     <div class="col-12 col-sm-6 p-2 bd-highlight left">
-      <h1>Lab Name</h1>
-      <h5>Collage Name</h5><br>
+      <h1 class="labName">Lab Name</h1>
+      <h5 class="college">Collage Name</h5><br>
       <div class="form-group">
         <label for="exampleInputPassword1">Time Slots</label>
         <input type="text" class="form-control time" id="exampleInputPassword1" placeholder="Time" disabled>
@@ -79,8 +79,8 @@
         </div>
       </form>
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" disabled></textarea>
+        <label for="exampleFormControlTextarea1">Facilities Available</label>
+        <textarea class="form-control textBox" id="exampleFormControlTextarea1" rows="3" disabled></textarea>
       </div>
       <button type="submit" class="btn btn-primary mb-2">Book Class</button>
 
@@ -181,11 +181,19 @@
   let sr_no = "1";
   get(child(dbRef, `college`)).then((snapshot) => {
     if (snapshot.exists()) {
-      // let neww=snapshot.val()[1].time
-      document.querySelector(".time").value = snapshot.val()[1].time
-      document.querySelector(".price").value = snapshot.val()[1].price
-      // console.log(neww)
+      // get the value from local store
+      var id = localStorage.getItem("id");
+      console.log(id)
 
+      // change google store location
+      let name = snapshot.val()[id]
+      let x = parseFloat(name.location.split(",")[0]), y = parseFloat(name.location.split(",")[1])
+
+      document.querySelector(".time").value = snapshot.val()[id].time
+      document.querySelector(".labName").innerHTML = snapshot.val()[id].labName
+      document.querySelector(".college").innerHTML = snapshot.val()[id].college
+      document.querySelector(".textBox").innerHTML = snapshot.val()[id].category
+      document.querySelector(".price").value = snapshot.val()[id].price
     } else {
       console.log("No data available");
     }
