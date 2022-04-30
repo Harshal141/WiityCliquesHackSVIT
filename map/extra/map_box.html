@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+</body>
+
+<script>
+    window.addEventListener("load", function () {
+        mapboxgl.accessToken =
+            "pk.eyJ1Ijoic2FoaWwta2FtYXRlIiwiYSI6ImNsMmttNzR1ODA1M3ozaW5vemw4OWFubnkifQ.Q_1fGDPAy94gxKirc0l8Og"
+        let succeed = function () {
+            let map = new mapboxgl.Map({
+                container: "map",
+                style: "mapbox://styles/mapbox/streets-v11",
+                center: [22.462678759310272, 73.06722123575166],
+                zoom: 13
+            });
+
+            let marker = new mapboxgl.Marker()
+                .setLngLat([22.462678759310272, 73.06722123575166])
+                .addTo(map);
+        };
+
+        let failure=function(err){
+            console.log(err);
+        }
+
+        let options={
+            enableHighAccuracy:true,
+            timeout: 5000,
+            maximumAge:0
+        }
+
+        navigator.geolocation.getCurrentPostition(succeed,failure,options)
+    })
+
+</script>
+
+</html>
