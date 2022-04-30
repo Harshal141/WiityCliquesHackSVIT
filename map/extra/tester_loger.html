@@ -254,8 +254,10 @@
                 const token = credential.accessToken;
                 // The signed-in user info.
                 const user = result.user;
-                // console.log(user.uid)
-                writeLoginData(user.uid)
+                // let a = user.id
+                // writeLoginData(a)
+                console.log(user.uid)
+                localStorage.setItem("uid", user.uid)
                 // location.replace("https://www.w3schools.com")
 
                 // ...
