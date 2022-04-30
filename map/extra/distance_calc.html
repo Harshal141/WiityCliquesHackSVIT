@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Click the button to get your coordinates.</p>
+    latitude: <input type="text" id="latitude"><br>
+    longitude: <input type="text" id="longitude"><br>
+    <button id="sub">calculate</button>
+
+    <p id="demo"></p>
+</body>
+
+<script>
+    var xyz = document.getElementById("demo");
+
+    document.getElementById("sub").addEventListener('click', function distance() {
+        // const db = getDatabase();
+        let lat1=22.4688822
+        let lon1=73.07561
+        let lat2 = document.getElementById('latitude').value
+        let lon2 = document.getElementById('longitude').value
+        lon1 = lon1 * Math.PI / 180;
+        lon2 = lon2 * Math.PI / 180;
+        lat1 = lat1 * Math.PI / 180;
+        lat2 = lat2 * Math.PI / 180;
+
+        // Haversine formula
+        let dlon = lon2 - lon1;
+        let dlat = lat2 - lat1;
+        let a = Math.pow(Math.sin(dlat / 2), 2)
+            + Math.cos(lat1) * Math.cos(lat2)
+            * Math.pow(Math.sin(dlon / 2), 2);
+
+        let c = 2 * Math.asin(Math.sqrt(a));
+
+        // Radius of earth in kilometers. Use 3956
+        // for miles
+        let r = 6371;
+
+        // calculate the result
+        // return (c * r);
+        let z = (c * r);
+        xyz.innerHTML = "distance : " + z;
+    })
+</script>
+
+</html>
