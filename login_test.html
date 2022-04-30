@@ -52,7 +52,32 @@
     const analytics = getAnalytics(app);
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider(app);
+    const db = getDatabase(app)
+    const dbRef = ref(db)
 
+    // data adding
+    document.getElementById("sub").addEventListener('click', function writeUserData(name, age, roll) {
+        // const db = getDatabase();
+        name = document.getElementById('name').value
+        age = document.getElementById("age").value
+        roll = document.getElementById("roll").value
+        set(ref(db, 'users/' + roll), {
+            username: name,
+            age: age
+            // profile_picture: imageUrl
+        });
+    })
+
+    //  data fetching
+    get(child(dbRef, `users`)).then((snapshot) => {
+        if (snapshot.exists()) {
+            console.log(snapshot.val());
+        } else {
+            console.log("No data available");
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
 
     login.addEventListener('click', (e) => {
         // signInWithRedirect(auth, provider);
@@ -85,6 +110,7 @@
                 // The signed-in user info.
                 const user = result.user;
                 location.replace("https://www.w3schools.com")
+
                 // ...
             }).catch((error) => {
                 // Handle Errors here.
