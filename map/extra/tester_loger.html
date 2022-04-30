@@ -218,8 +218,8 @@
         // name = document.getElementById('name').value
         // age = document.getElementById("age").value
         // roll = document.getElementById("roll").value
-        set(ref(db, 'users/' + user), {
-            username: user
+        set(ref(db, 'users/' + localStorage.getItem("uid")), {
+            username: uid
             // profile_picture: imageUrl
         });
     }
