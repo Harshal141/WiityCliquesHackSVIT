@@ -31,3 +31,10 @@
     It will be used to give user a Map based interface for
     while searching for laboratories.
 
+## Problems faced while developing our project:
+    - **Firebase:**
+        As all the members in our team had very little experience of using Firebase services like Authentication and Firestore, it was bit challenging for us to implement it in our project.
+    - **Google Maps Distance Calculation and Sorting:**
+        This also being a new experince, it took us bit time to figure out the algorithm and working.
+    - **Scope of the Solution**
+        As now we've come back to normal and lockdowns being a thing of past, keep our solution relevant for today was bit mind-boggling.
