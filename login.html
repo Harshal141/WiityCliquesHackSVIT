@@ -185,9 +185,18 @@
         name = document.getElementById('name').value
         age = document.getElementById("age").value
         roll = document.getElementById("roll").value
-        set(ref(db, 'users/' + roll), {
+        get(child(dbRef, `users`)).then((snapshot) => {
+        if (snapshot.exists()) {
+            let sr=Object.keys(snapshot.val()).length;
+        } else {
+            console.log("No data available");
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
+        set(ref(db, 'users/' + sr), {
             username: name,
-            age: age
+            // age: ageqwerd
             // profile_picture: imageUrl
         });
     })

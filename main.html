@@ -272,4 +272,25 @@
 
 </script>
 
+
+get(child(dbRef, `users/`)).then((snapshot) => {
+    if (snapshot.exists()) {
+        let loop = 0
+        for (const key in snapshot.val()) {
+            if(key == localStorage.getItem("uid")){
+                loop = 1
+        }}
+            if(loop == 1){
+                location.replace("main.html")
+            }else{
+                location.replace("details.html")
+            }
+        
+        // console.log(snapshot.val());
+    } else {
+        console.log("No data available");
+    }
+}).catch((error) => {
+    console.error(error);
+});
 </html>
