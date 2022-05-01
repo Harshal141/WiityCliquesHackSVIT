@@ -19,36 +19,6 @@
 
 <body>
 
-    <!-- start header -->
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <h1 class="h1 fw-bold">Co<span style=" color: var(--themePrimary)">Labs</span></h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link mx-2" href="#!"><i class="fas fa-info pe-2"></i>About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-2" href="#!"><i class="fas fa-address-card pe-2"></i>Contact Us</a>
-                    </li>
-                    <li class="nav-item ms-3 rounded-pill">
-                        <a class="btn btn-black btn-rounded rounded-pill text-light" href="#!"
-                            style="background-color: var(--themePrimary);">Log In</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar -->
-    <!-- end header -->
-
     <!-- Deatils Form -->
     <div class="container-sm p-4 bg-light border border-2 border-secondary rounded-xl shadow"
         style="margin-top: 100px; margin-bottom: 50px;">
@@ -89,7 +59,7 @@
         <div class="row m-4">
             <div class="col"></div>
             <button class="btn btn-themePrimary p-3 col-4 fs-4 shadow rounded-pill"
-                 id="sub">Calculate</button>
+                 id="sub">Submit</button>
             <div class="col"></div>
         </div>
         <div class="row m-4" id="final" style="display: none;">
@@ -195,7 +165,9 @@
         let address= document.querySelector(".address").value
         let phone= document.querySelector(".phone").value
         // let name= document.querySelector(".name").value
-
+        if(namee == ""||college == ""||edutype == ""||email == ""||address == ""||phone == ""){
+            alert("pura bhar")
+        }else{
         set(ref(db, 'users/' + localStorage.getItem('uid')), {
             name: namee,
             college: college,
@@ -204,7 +176,9 @@
             address: address,
             phone:phone
             // profile_picture: imageUrl
-        });
+            });
+        location.replace("main.html")
+        }
     })
 </script>
 </html>

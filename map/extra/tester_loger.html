@@ -259,7 +259,7 @@
                 console.log(user.uid)
                 localStorage.setItem("uid", user.uid)
                 // location.replace("https://www.w3schools.com")
-
+                location.replace("../../checker.html")
                 // ...
             }).catch((error) => {
                 // Handle Errors here.
@@ -270,7 +270,7 @@
                 // The AuthCredential type that was used.
                 const credential = GoogleAuthProvider.credentialFromError(error);
                 // ...
-                console.log("nkjbkjbjkvjkhx")
+                alert("Error469: Re Login")
             });
     });
 </script>
