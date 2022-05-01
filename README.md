@@ -41,3 +41,6 @@
 
 - **Scope of the Solution**
         As now we've come back to normal and lockdowns being a thing of past, keep our solution relevant for today was bit mind-boggling.
+
+**Link to our website**
+https://dahighsky.github.io/WiityCliquesHackSVIT/
