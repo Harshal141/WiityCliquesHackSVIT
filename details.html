@@ -164,6 +164,14 @@
         let email= document.querySelector(".email").value
         let address= document.querySelector(".address").value
         let phone= document.querySelector(".phone").value
+
+        localStorage.setItem("name",namee)
+        localStorage.setItem("college",college)
+        localStorage.setItem("edutype",edutype)
+        localStorage.setItem("email",email)
+        localStorage.setItem("address",address)
+        localStorage.setItem("phone",phone)
+        localStorage.setItem("name",namee)
         // let name= document.querySelector(".name").value
         if(namee == ""||college == ""||edutype == ""||email == ""||address == ""||phone == ""){
             alert("pura bhar")
